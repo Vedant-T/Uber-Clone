@@ -45,7 +45,7 @@ const captainSchema = new mongoose.Schema({
             required: true,
             minlength: [3, "Vehicle plate number must be at least 3 characters long"]
         },
-        capacity:{
+        capacity: {
             type: Number,
             required: true,
             min: [1, "Vehicle capacity must be at least 1"],
@@ -55,15 +55,15 @@ const captainSchema = new mongoose.Schema({
             required: true,
             enum: ["car", "motorcycle", "auto"],
         },
-        location: {
-            latitude: {
-                type: Number,
-            },
-            longitude: {
-                type: Number,
-            }
+    },
+    location: {
+        ltd: {
+            type: Number,
+        },
+        lng: {
+            type: Number,
         }
-    }    
+    }
 });
 
 captainSchema.methods.generateAuthToken = function () {

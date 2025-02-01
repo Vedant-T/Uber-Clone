@@ -4,12 +4,15 @@ const VehiclePanel = (props) => {
     <div>
         <h5 onClick={() => {
           props.setVehiclePanel(false);
+          props.setPanelOpen(true);
         }} className="p-1 w-[94%] text-center absolute top-0"><i className="ri-arrow-down-wide-line text-3xl text-gray-400"></i></h5>
 
         <h3 className="text-2xl font-semibold mb-5">Choose a Vehicle</h3>
 
         <div onClick={()=>{
           props.setConfirmRidePanel(true)
+          props.setVehiclePanel(false)
+          props.setVehicleType('car')
         }} className="flex border-2 mb-2 border-gray-400 active:border-black rounded-xl w-full items-center p-3  justify-between">
           <img
             className="h-18"
@@ -26,11 +29,13 @@ const VehiclePanel = (props) => {
             <h5 className="font-medium text-sm">2 mins away</h5>
             <p className="font-normal text-xs text-gray-600">Affordable, compact rides</p>
           </div>
-          <h2 className="text-lg font-semibold">₹192.20</h2>
+          <h2 className="text-lg font-semibold">₹{props.fare.car}</h2>
         </div>
 
         <div onClick={()=>{
           props.setConfirmRidePanel(true)
+          props.setVehiclePanel(false)
+          props.setVehicleType('moto')
         }} className="flex border-2 mb-2 border-gray-400 active:border-black rounded-xl w-full items-center p-3  justify-between">
           <img
             className="h-18"
@@ -46,11 +51,13 @@ const VehiclePanel = (props) => {
             <h5 className="font-medium text-sm">3 mins away</h5>
             <p className="font-normal text-xs text-gray-600">Affordable motorcycle rides</p>
           </div>
-          <h2 className="text-lg font-semibold">₹65</h2>
+          <h2 className="text-lg font-semibold">₹{props.fare.moto}</h2>
         </div>
 
         <div onClick={()=>{
           props.setConfirmRidePanel(true)
+          props.setVehiclePanel(false)
+          props.setVehicleType('auto')
         }} className="flex border-2 mb-2 border-gray-400 active:border-black rounded-xl w-full items-center p-3  justify-between">
           <img
             className="h-18"
@@ -66,7 +73,7 @@ const VehiclePanel = (props) => {
             <h5 className="font-medium text-sm">3 mins away</h5>
             <p className="font-normal text-xs text-gray-600">Affordable auto rides</p>
           </div>
-          <h2 className="text-lg font-semibold">₹118.86</h2>
+          <h2 className="text-lg font-semibold">₹{props.fare.auto}</h2>
         </div>
     </div>
   )
